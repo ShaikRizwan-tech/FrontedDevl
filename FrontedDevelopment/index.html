@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LifeCanvas — Personal Dashboard</title>
+
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>LifeCanvas</h1>
+    <p class="tagline">Tasks • Goals • Motivation</p>
+  </header>
+
+  <main class="container">
+    <section class="panel" id="tasks-panel">
+      <h2>Tasks</h2>
+
+      <form id="task-form" class="inline-form" autocomplete="off">
+        <input id="task-input" type="text" placeholder="Add a new task..." required />
+        <button type="submit">Add</button>
+      </form>
+
+      <ul id="task-list" class="list"></ul>
+
+      <div class="panel-footer">
+        <span id="task-count">0 tasks</span>
+        <span id="completed-count">0 completed</span>
+        <button id="clear-completed" class="ghost">Clear Completed</button>
+      </div>
+    </section>
+
+    <section class="panel" id="goals-panel">
+      <h2>Goals</h2>
+
+      <form id="goal-form" class="inline-form" autocomplete="off">
+        <input id="goal-input" type="text" placeholder="Add a goal (long-term)..." required />
+        <button type="submit">Add Goal</button>
+      </form>
+
+      <ul id="goal-list" class="list"></ul>
+    </section>
+
+    <section class="panel" id="motivation-panel">
+      <h2>Motivation</h2>
+
+      <div id="quote" class="quote">“Start where you are. Use what you have. Do what you can.”</div>
+      <div class="quote-controls">
+        <button id="new-quote" class="ghost">New Quote</button>
+        <button id="auto-quote-toggle" class="ghost">Auto Rotate: Off</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>LifeCanvas — built for study & productivity</small>
+  </footer>
+
+  <!-- Link external JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
