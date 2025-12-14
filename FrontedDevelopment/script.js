@@ -1,5 +1,3 @@
-Uses localStorage to persist data.
-
 const STORAGE_KEYS = {
   TASKS: 'lifecanvas_tasks_v1',
   GOALS: 'lifecanvas_goals_v1',
@@ -185,5 +183,6 @@ function init() {
   renderTasks();
   renderGoals();
 }
+
 
 init();
