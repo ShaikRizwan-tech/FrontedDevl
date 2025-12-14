@@ -1,64 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LifeCanvas — Personal Dashboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeCanvas | Personal Productivity Dashboard</title>
 
-  <!-- Link external CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <h1>LifeCanvas</h1>
-    <p class="tagline">Tasks • Goals • Motivation</p>
+
+  <!-- Header -->
+  <header>
+    LifeCanvas
   </header>
 
+  <!-- Main Dashboard -->
   <main class="container">
-    <section class="panel" id="tasks-panel">
-      <h2>Tasks</h2>
 
-      <form id="task-form" class="inline-form" autocomplete="off">
-        <input id="task-input" type="text" placeholder="Add a new task..." required />
-        <button type="submit">Add</button>
-      </form>
-
-      <ul id="task-list" class="list"></ul>
-
-      <div class="panel-footer">
-        <span id="task-count">0 tasks</span>
-        <span id="completed-count">0 completed</span>
-        <button id="clear-completed" class="ghost">Clear Completed</button>
+    <!-- Tasks Section -->
+    <section class="card">
+      <h2>✅ Tasks</h2>
+      <div class="task-input">
+        <input 
+          type="text" 
+          id="taskInput" 
+          placeholder="Add a new task"
+          aria-label="Task input"
+        />
+        <button onclick="addTask()">Add</button>
       </div>
+      <ul id="taskList"></ul>
     </section>
 
-    <section class="panel" id="goals-panel">
-      <h2>Goals</h2>
-
-      <form id="goal-form" class="inline-form" autocomplete="off">
-        <input id="goal-input" type="text" placeholder="Add a goal (long-term)..." required />
-        <button type="submit">Add Goal</button>
-      </form>
-
-      <ul id="goal-list" class="list"></ul>
+    <!-- Goals Section -->
+    <section class="card">
+      <h2>🎯 Goals</h2>
+      <ul class="goals">
+        <li>Improve skills daily</li>
+        <li>Stay consistent</li>
+        <li>Track personal growth</li>
+      </ul>
     </section>
 
-    <section class="panel" id="motivation-panel">
-      <h2>Motivation</h2>
-
-      <div id="quote" class="quote">“Start where you are. Use what you have. Do what you can.”</div>
-      <div class="quote-controls">
-        <button id="new-quote" class="ghost">New Quote</button>
-        <button id="auto-quote-toggle" class="ghost">Auto Rotate: Off</button>
-      </div>
+    <!-- Motivation Section -->
+    <section class="card">
+      <h2>💡 Motivation</h2>
+      <p class="quote" id="quoteText"></p>
     </section>
+
   </main>
 
-  <footer class="site-footer">
-    <small>LifeCanvas — built for study & productivity</small>
+  <!-- Footer -->
+  <footer>
+    © 2025 LifeCanvas. All rights reserved.
   </footer>
 
-  <!-- Link external JS -->
-  <script src="script.js" defer></script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
 </body>
 </html>
+
+   
+        
