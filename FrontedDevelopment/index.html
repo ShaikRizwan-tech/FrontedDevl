@@ -4,59 +4,51 @@
   <meta charset="UTF-8">
   <title>LifeCanvas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS LINK (IMPORTANT) -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="header">
   <h1>LifeCanvas</h1>
-  <nav>Tasks • Goals • Motivation</nav>
+  <p>Tasks • Goals • Motivation</p>
 </header>
 
 <div class="container">
 
-  <!-- Tasks -->
   <div class="card">
     <h2>Tasks</h2>
-    <div class="flex">
-      <input id="taskInput" placeholder="Add a new task...">
+    <div class="row">
+      <input id="taskInput" placeholder="Add a new task">
       <button onclick="addTask()">Add</button>
     </div>
     <ul id="taskList"></ul>
-    <p class="stats">
-      <span id="taskCount">0 tasks</span> • 
-      <span id="completedCount">0 completed</span>
-    </p>
-    <button class="secondary" onclick="clearCompleted()">Clear Completed</button>
+    <p id="stats">0 tasks • 0 completed</p>
+    <button class="danger" onclick="clearCompleted()">Clear Completed</button>
   </div>
 
-  <!-- Goals -->
   <div class="card">
     <h2>Goals</h2>
-    <div class="flex">
-      <input id="goalInput" placeholder="Add a goal (long-term)...">
+    <div class="row">
+      <input id="goalInput" placeholder="Add a goal (long-term)">
       <button onclick="addGoal()">Add Goal</button>
     </div>
     <ul id="goalList"></ul>
   </div>
 
-  <!-- Motivation -->
   <div class="card">
     <h2>Motivation</h2>
     <div class="quote" id="quoteBox">
       “Start where you are. Use what you have. Do what you can.”
     </div>
-    <div class="flex">
-      <button onclick="newQuote()">New Quote</button>
-      <button class="secondary" onclick="toggleAuto()">
-        Auto Rotate: <span id="autoState">Off</span>
-      </button>
-    </div>
+    <button onclick="newQuote()">New Quote</button>
   </div>
 
 </div>
 
+<!-- JS LINK (IMPORTANT) -->
 <script src="script.js"></script>
 </body>
 </html>
