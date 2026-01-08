@@ -1,53 +1,76 @@
-let completed = 0;
+// ================= TASKS =================
 
-function addTask(){
-  let input = document.getElementById("taskInput");
-  if(input.value === "") return;
+// Task form
+const taskForm = document.querySelectorAll("form")[0];
+const taskInput = taskForm.querySelector("input[type='text']");
+const taskList = document.querySelector("ul");
+const totalPara = document.querySelectorAll("section p")[3];
+const completedPara = document.querySelectorAll("section p")[4];
+const clearBtn = document.querySelector("button");
 
-  let li = document.createElement("li");
-  li.innerHTML = `<input type="checkbox" onchange="toggleTask(this)"> ${input.value}`;
-  document.getElementById("taskList").appendChild(li);
+let totalTasks = 3;       // already existing list items
+let completedTasks = 1;   // given in HTML
 
-  input.value="";
-  updateStats();
-}
+taskForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // page reload stop
 
-function toggleTask(cb){
-  completed += cb.checked ? 1 : -1;
-  updateStats();
-}
+    if (taskInput.value.trim() === "") return;
 
-function clearCompleted(){
-  let list = document.getElementById("taskList");
-  [...list.children].forEach(li=>{
-    if(li.querySelector("input").checked) li.remove();
-  });
-  completed=0;
-  updateStats();
-}
+    const li = document.createElement("li");
+    li.textContent = taskInput.value;
 
-function updateStats(){
-  let total = document.getElementById("taskList").children.length;
-  document.getElementById("stats").innerText =
-    total + " tasks • " + completed + " completed";
-}
+    taskList.appendChild(li);
+    totalTasks++;
 
-function addGoal(){
-  let input = document.getElementById("goalInput");
-  if(input.value==="") return;
-  let li = document.createElement("li");
-  li.innerText=input.value;
-  document.getElementById("goalList").appendChild(li);
-  input.value="";
-}
+    totalPara.textContent = "Total Tasks: " + totalTasks;
+    completedPara.textContent = "Completed Tasks: " + completedTasks;
 
-const quotes=[
-  "Discipline creates success.",
-  "Consistency beats talent.",
-  "Focus on progress, not perfection."
+    taskInput.value = "";
+});
+
+clearBtn.addEventListener("click", function () {
+    taskList.innerHTML = "";
+    totalTasks = 0;
+    completedTasks = 0;
+
+    totalPara.textContent = "Total Tasks: 0";
+    completedPara.textContent = "Completed Tasks: 0";
+});
+
+
+// ================= GOALS =================
+
+const goalForm = document.querySelectorAll("form")[1];
+const goalInput = goalForm.querySelector("input[type='text']");
+const goalList = document.querySelector("ol");
+
+goalForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    if (goalInput.value.trim() === "") return;
+
+    const li = document.createElement("li");
+    li.textContent = goalInput.value;
+
+    goalList.appendChild(li);
+    goalInput.value = "";
+});
+
+
+// ================= MOTIVATION =================
+
+const quoteBtn = document.querySelectorAll("button")[1];
+const quoteBox = document.querySelector("blockquote");
+
+const quotes = [
+    "Believe in yourself and all that you are.",
+    "Small steps every day lead to big success.",
+    "Discipline is the bridge between goals and achievement.",
+    "Consistency beats motivation.",
+    "Your future depends on what you do today."
 ];
 
-function newQuote(){
-  document.getElementById("quoteBox").innerText =
-    quotes[Math.floor(Math.random()*quotes.length)];
-}
+quoteBtn.addEventListener("click", function () {
+    const random = Math.floor(Math.random() * quotes.length);
+    quoteBox.textContent = "“" + quotes[random] + "”";
+});
