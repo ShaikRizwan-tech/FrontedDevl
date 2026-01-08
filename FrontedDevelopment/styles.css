@@ -1,161 +1,91 @@
-/* =========================
-   LifeCanvas – Professional CSS
-   ========================= */
-
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --primary:#4f6df5;
+  --bg:#f4f6fb;
+  --card:#ffffff;
+  --text:#1f2937;
 }
 
-:root {
-  --primary: #2563eb;
-  --primary-dark: #1e40af;
-  --bg-light: #f8fafc;
-  --bg-gradient: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  --text-dark: #0f172a;
-  --text-muted: #64748b;
-  --card-bg: #ffffff;
-  --radius: 16px;
-  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+*{
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
 }
 
-body {
-  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg-gradient);
-  color: var(--text-dark);
-  min-height: 100vh;
-  line-height: 1.6;
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 34px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--primary-dark);
+header{
+  background:linear-gradient(90deg,#3b6ef3,#6a7dfc);
+  color:white;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-radius:0 0 20px 20px;
 }
 
-/* Layout */
-.container {
-  max-width: 1150px;
-  margin: auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+.container{
+  max-width:900px;
+  margin:30px auto;
+  padding:0 20px;
 }
 
-/* Cards */
-.card {
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,.06);
+  margin-bottom:25px;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #d1d5db;
 }
 
-.card h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
-  color: var(--text-dark);
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:var(--primary);
+  color:white;
+  cursor:pointer;
 }
 
-/* Task Input */
-.task-input {
-  display: flex;
-  gap: 10px;
+button.secondary{
+  background:#e5e7eb;
+  color:#111;
 }
 
-input {
-  flex: 1;
-  padding: 12px 14px;
-  font-size: 14px;
-  border-radius: 12px;
-  border: 1px solid #cbd5e1;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
+.flex{
+  display:flex;
+  gap:10px;
 }
 
-input:focus {
-  outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+ul{
+  padding-left:20px;
 }
 
-/* Buttons */
-button {
-  padding: 12px 18px;
-  border-radius: 12px;
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
-  background: var(--primary);
-  color: #ffffff;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+li{
+  margin:8px 0;
+  display:flex;
+  justify-content:space-between;
 }
 
-button:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
+.quote{
+  background:#f0f4ff;
+  padding:18px;
+  border-left:4px solid var(--primary);
+  border-radius:8px;
+  font-style:italic;
 }
 
-/* Task List */
-ul {
-  list-style: none;
-  margin-top: 18px;
+.stats{
+  font-size:14px;
+  opacity:.8;
 }
 
-li {
-  background: var(--bg-light);
-  padding: 12px 14px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: var(--text-dark);
-  border-left: 4px solid var(--primary);
-}
-
-/* Goals */
-.goals li {
-  list-style: disc;
-  margin-left: 22px;
-  border-left: none;
-  background: transparent;
-  padding: 6px 0;
-}
-
-/* Motivation */
-.quote {
-  font-style: italic;
-  font-size: 16px;
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  header {
-    font-size: 26px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-}
