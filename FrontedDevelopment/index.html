@@ -1,54 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LifeCanvas</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS LINK (IMPORTANT) -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>LifeCanvas</title>
 </head>
-
 <body>
 
-<header class="header">
-  <h1>LifeCanvas</h1>
-  <p>Tasks • Goals • Motivation</p>
-</header>
+    <!-- HEADER -->
+    <header>
+        <h1>LifeCanvas</h1>
+        <p>Tasks • Goals • Motivation</p>
+        <hr>
+    </header>
 
-<div class="container">
+    <!-- INTRODUCTION -->
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            LifeCanvas is a personal life management and self-development framework.
+            It helps individuals organize their daily tasks, long-term goals, and
+            motivation in one place. This application is designed to improve
+            productivity, focus, and personal growth.
+        </p>
+    </section>
 
-  <div class="card">
-    <h2>Tasks</h2>
-    <div class="row">
-      <input id="taskInput" placeholder="Add a new task">
-      <button onclick="addTask()">Add</button>
-    </div>
-    <ul id="taskList"></ul>
-    <p id="stats">0 tasks • 0 completed</p>
-    <button class="danger" onclick="clearCompleted()">Clear Completed</button>
-  </div>
+    <hr>
 
-  <div class="card">
-    <h2>Goals</h2>
-    <div class="row">
-      <input id="goalInput" placeholder="Add a goal (long-term)">
-      <button onclick="addGoal()">Add Goal</button>
-    </div>
-    <ul id="goalList"></ul>
-  </div>
+    <!-- TASKS SECTION -->
+    <section>
+        <h2>Tasks</h2>
+        <p>
+            The Tasks section helps users manage daily activities and track progress.
+        </p>
 
-  <div class="card">
-    <h2>Motivation</h2>
-    <div class="quote" id="quoteBox">
-      “Start where you are. Use what you have. Do what you can.”
-    </div>
-    <button onclick="newQuote()">New Quote</button>
-  </div>
+        <form>
+            <label>Add a new task:</label><br>
+            <input type="text" placeholder="Enter task here"><br><br>
+            <input type="submit" value="Add Task">
+        </form>
 
-</div>
+        <h3>Task List</h3>
+        <ul>
+            <li>Complete assignments</li>
+            <li>Study for exams</li>
+            <li>Practice coding</li>
+        </ul>
 
-<!-- JS LINK (IMPORTANT) -->
+        <p>Total Tasks: 3</p>
+        <p>Completed Tasks: 1</p>
+
+        <button>Clear Completed Tasks</button>
+    </section>
+
+    <hr>
+
+    <!-- GOALS SECTION -->
+    <section>
+        <h2>Goals</h2>
+        <p>
+            The Goals section is used to define long-term objectives and future plans.
+        </p>
+
+        <form>
+            <label>Add a long-term goal:</label><br>
+            <input type="text" placeholder="Enter your goal"><br><br>
+            <input type="submit" value="Add Goal">
+        </form>
+
+        <h3>My Goals</h3>
+        <ol>
+            <li>Become a skilled web developer</li>
+            <li>Complete graduation successfully</li>
+            <li>Get a good job in the IT field</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <!-- MOTIVATION SECTION -->
+    <section>
+        <h2>Motivation</h2>
+        <p>
+            Motivation plays an important role in personal growth and consistency.
+            This section provides inspirational quotes to keep users encouraged.
+        </p>
+
+        <blockquote>
+            “Start where you are. Use what you have. Do what you can.”
+        </blockquote>
+
+        <button>Get New Quote</button>
+
+        <h3>Why Motivation Matters</h3>
+        <ul>
+            <li>Builds confidence</li>
+            <li>Improves focus</li>
+            <li>Helps overcome challenges</li>
+            <li>Encourages consistency</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- LIFE AREAS -->
+    <section>
+        <h2>Key Life Areas</h2>
+        <table border="1" cellpadding="8">
+            <tr>
+                <th>Area</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>Academic growth and learning</td>
+            </tr>
+            <tr>
+                <td>Career</td>
+                <td>Professional goals and skills</td>
+            </tr>
+            <tr>
+                <td>Health</td>
+                <td>Physical and mental well-being</td>
+            </tr>
+            <tr>
+                <td>Relationships</td>
+                <td>Family, friends, and social life</td>
+            </tr>
+            <tr>
+                <td>Personal Growth</td>
+                <td>Self-improvement and habits</td>
+            </tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- CONCLUSION -->
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            LifeCanvas provides a structured approach to managing daily tasks,
+            setting meaningful goals, and staying motivated. By organizing
+            different aspects of life in one place, it helps individuals
+            achieve balance, clarity, and long-term success.
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>LifeCanvas Project</p>
+        <p>Developed using HTML</p>
+        <p>&copy; 2026 LifeCanvas. All rights reserved.</p>
+    </footer>
 <script src="script.js"></script>
+
 </body>
 </html>
+
